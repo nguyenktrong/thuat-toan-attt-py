@@ -1,3 +1,4 @@
+# thừa số không tầm thường
 import math
 def gcd(a,b):
   A=a
