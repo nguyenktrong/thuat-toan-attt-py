@@ -1,0 +1,16 @@
+# liệt kê các số carmichael
+from math import gcd
+def carmichael(n):
+  for a in range(2,n+1):
+    if gcd(a,n) == 1:
+      if (a**(n-1))%n != 1:
+        return False
+  return True
+def lst_carmichael(n):
+  lst = []
+  for i in range(n+1):
+    if carmichael(i):
+      lst.append(i)
+  return lst 
+n = int(input("Nhap n = "))
+print(lst_carmichael(n))
