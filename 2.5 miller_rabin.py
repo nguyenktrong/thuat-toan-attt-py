@@ -1,4 +1,3 @@
-# kiểm tra số nguyên tố lớn- định lý miller-rabin
 from random import randrange
 def convertbin(x):
   bin = ""
@@ -17,28 +16,33 @@ def mod(a,r,n):
     if k[i] == '1':    
       b = (b*A) % n
   return b
-
+def miller_rabin(n):  
+  d = n-1
+  for i in range(2,n):
+    cnt = 0
+    while d%i == 0:
+      d /= i
+      cnt = cnt + 1
+    s = cnt
+    r = int(d)
+    break
+  for x in range(t+1):
+    a = randrange(2,n-1)
+    y = mod(a,r,n)
+    if y != 1 and y != (n-1):
+      j = 1
+      while j <= (s-1) and y != (n-1):
+        y = (y*y) % n
+        if y == 1:
+          return True
+        j = j+1
+      if y != (n-1):
+        return True
+  return False
 n = int(input("n = "))
-a = randrange(2,n-2)
-d = n-1
-for i in range(2,n):
-  cnt = 0
-  while d%i == 0:
-    d /= i
-    cnt = cnt + 1
-  s = cnt
-  r = int(d)
-  break
-y = mod(a,r,n)
-if y != 1 and y != (n-1):
-  j = 1
-  while j <= (s-1) and y != (n-1):
-    y = (y*y) % n
-    if y == 1:
-      print("n là hợp số")
-      break
-    j = j+1
-  if y != (n-1):
-    print("n là hợp số")
+t = int(input("t = "))
+if miller_rabin(n):
+  print(f"{n} la hop so")
 else:
-  print("n là snt")
+  print(f"{n} la so nguyen to")
+
