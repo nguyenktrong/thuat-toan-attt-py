@@ -10,7 +10,7 @@ def boyer_moore(T, P):
   loop = 0 # tính số vòng lặp
   operation = 0 # tính số phép toán
   while i < len(T) - 1:
-    count = 0
+    count = 0 # đếm số ký tự khớp
     loop += 1
     operation += 1
     while(P[j] == T[i]):
@@ -26,10 +26,10 @@ def boyer_moore(T, P):
 T = input("Nhap T: ")
 P = input("Nhap P: ")
 if boyer_moore(T, P)[0]:
-  print(f"P xuat hien o vi tri {boyer_moore(T, P)[3]}") 
-  print(f"so vong lap = {boyer_moore(T, P)[1]}")
-  print(f"so phep toan = {boyer_moore(T, P)[2]}")
+  print(f"P xuat hien o vi tri {boyer_moore(T, P)[3]}") # i
+  print(f"so vong lap = {boyer_moore(T, P)[1]}") # loop
+  print(f"so phep toan = {boyer_moore(T, P)[2]}") # operation
 else:
   print("P khong xuat hien trong T ")
-  print(f"so vong lap = {boyer_moore(T, P)[1]}")
-  print(f"so phep toan = {boyer_moore(T, P)[2]}")
+  print(f"so vong lap = {boyer_moore(T, P)[1]}") # loop
+  print(f"so phep toan = {boyer_moore(T, P)[2]}") # operation
