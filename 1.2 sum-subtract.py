@@ -1,3 +1,4 @@
+# Thuật toán cộng - trừ chính xác bội
 from math import *
 def convert_array(a,w,t):
   A = []
