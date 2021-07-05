@@ -17,8 +17,8 @@ def Rho(n):
     b=(b*b+1)%n
     d=math.gcd(a-b,n)
     if n > d > 1:
-      return d,n/d
+      return d
     if n == d:
       return False
 n=int(input("Nhap n = "))
-print(f"d = {Rho(n)[0]}")
+print(f"d = {Rho(n)}")
