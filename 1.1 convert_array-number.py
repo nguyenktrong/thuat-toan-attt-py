@@ -1,3 +1,4 @@
+# chuyển mảng thành số - chuyển số thành mảng
 from math import *
 def convert_array(a,w,t):
   A = []
