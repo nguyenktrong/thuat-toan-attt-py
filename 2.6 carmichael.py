@@ -1,5 +1,6 @@
 # số giả nguyên tố carmichael
 from math import sqrt,gcd
+
 def prime(n):
   for i in range(2, int(sqrt(n))):
     if n%i == 0:
