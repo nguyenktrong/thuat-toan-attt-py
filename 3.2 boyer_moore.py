@@ -9,7 +9,7 @@ def boyer_moore(T, P):
   j = len(P) - 1
   loop = 0 # tính số vòng lặp
   operation = 0 # tính số phép toán
-  while i < len(T) - 1:
+  while i < len(T):
     count = 0 # đếm số ký tự khớp
     loop += 1
     operation += 1
